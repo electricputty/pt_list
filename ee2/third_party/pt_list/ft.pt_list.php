@@ -194,6 +194,8 @@ class Pt_list_ft extends EE_Fieldtype {
 	 */
 	function pre_process($data)
 	{
+		if (is_array($data)) $data = $this->save($data);
+		
 		$data = explode("\n", $data);
 
 		foreach ($data as &$item)
